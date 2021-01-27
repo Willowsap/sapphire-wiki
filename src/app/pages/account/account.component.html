@@ -1,0 +1,7 @@
+<mat-spinner *ngIf="isLoading"></mat-spinner>
+<div *ngIf="!isLoading">
+    <a mat-stroked-button 
+      routerLink='/courses/create'>Create Course</a>
+  <h1 class="mat-h1">My Courses</h1>
+</div>
+<app-course-list [user]="userId"></app-course-list>

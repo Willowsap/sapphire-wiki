@@ -1,0 +1,26 @@
+<mat-card>
+  <mat-spinner *ngIf='isLoading'></mat-spinner>
+  <form [formGroup]='form' (submit)='onSaveTopic()' *ngIf='!isLoading'>
+    <mat-form-field>
+      <input matInput type='text' formControlName='title' placeholder='Topic Title'>
+    </mat-form-field>
+    <mat-form-field>
+      <textarea matInput rows='4' formControlName='lecture' placeholder='Lecture'></textarea>
+    </mat-form-field>
+    <button mat-stroked-button type='button' (click)="onAddProblem()">Add problem</button>
+    <button mat-raised-button color='accent' type='submit'>Save Topic</button>
+  </form>
+</mat-card>
+
+<mat-card id="problemsSection" *ngIf="saps.length > 0">
+  <h2 class="mat-h2">Problems</h2>
+  <ul>
+    <li *ngFor="let sap of saps">
+      <h3 class="mat-h3">{{sap.question}}</h3>
+      <button mat-button type='button' color='accent' (click)="editSap(sap.id)">Edit</button>
+      <button mat-button type='button' color='warn' (click)="deleteSap(sap.id)">Delete</button>
+    </li>
+  </ul>
+</mat-card>
+
+<h3 *ngIf="saps.length == 0" class="mat-h3">No problems yet</h3>

@@ -1,0 +1,42 @@
+.imagePreview {
+  height: 5rem;
+  margin: 1rem 0;
+}
+
+.imagePreview img {
+  height: 100%;
+}
+
+#topicList {
+  display: flex;
+  flex-direction: column;
+  margin: 0px;
+  padding: 0px;
+}
+
+#topicList li {
+  display: flex;
+  flex-direction: row;
+  margin-top: 1rem;
+}
+
+.topic {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  background-color: rgb(193, 217, 235);
+  cursor: pointer;
+}
+
+.topic div {
+  display: flex;
+}
+
+.topic a {
+  display: flex;
+}
+
+.top {
+  text-align: center;
+}

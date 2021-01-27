@@ -1,0 +1,68 @@
+mat-card {
+  text-align: center;
+  min-height: 300px;
+}
+mat-form-field {
+  display: block;
+}
+#answerInput {
+  min-height: 100px;
+}
+.inputWithButton {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.inputWithButton input {
+  display: flex;
+  flex: 0.7;
+}
+
+.inputWithButton button {
+  display: flex;
+  flex: 0.3;
+  text-align: center;
+}
+
+.bottomSection {
+  display: flex;
+  flex-direction: row;
+
+}
+
+.left {
+  display: flex;
+  flex-direction: column;
+  flex: 0.7;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+h2 {
+  padding: 0px;
+  margin: 2px;
+}
+
+.left ul {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+}
+
+
+.right {
+  display: flex;
+  height: 100%;
+  flex: 0.3;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
+.right button {
+  margin-top: 0.5rem;
+  display: flex;
+  flex: 1;
+}

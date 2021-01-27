@@ -1,0 +1,18 @@
+html {
+  height: 100%;
+}
+
+.page {
+  background-color: rgb(220, 220, 223);
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+body {
+  height: 100%;
+  margin: 0;
+  background-image: linear-gradient(rgb(203,202,204), rgb(1,147,249));
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}

@@ -1,0 +1,14 @@
+mat-card {
+  text-align: center;
+  min-height: 300px;
+}
+mat-tab-group {
+  text-align: center;
+  align-items: center;
+}
+mat-tab-body-wrapper {
+  width: 100%;
+}
+#answerInput {
+  min-height: 100px;
+}

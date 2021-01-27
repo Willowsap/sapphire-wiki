@@ -1,0 +1,18 @@
+<mat-spinner *ngIf='isLoading'></mat-spinner>
+<section class="practiceProblemSection" *ngIf="!isLoading && hasProblems">
+  <form [formGroup]='question' (submit)='onCheckAnswer()'>
+    <h3 mat-h3>{{saps[currProblem].question}}</h3>
+    <mat-form-field id="answerInput">
+      <input matInput type='text' formControlName='answer' placeholder='answer'>
+      <mat-error *ngIf="question.get('answer').errors && question.get('answer').errors.required">
+        Please enter your answer</mat-error>
+    </mat-form-field>
+    <button mat-button type='submit'>Check answer</button>
+    <h3 *ngIf="correct && submitted" mat-h3 class="correct">Correct!</h3>
+    <button *ngIf="correct && submitted" mat-stroked-button color="accent" type='button' (click)="nextProblem()">New problem</button>
+    <h3 *ngIf="!correct && submitted" mat-h3 class="incorrect">Not quite, try again</h3>
+  </form>
+</section>
+<section class="noProblemSection" *ngIf="!isLoading && !hasProblems">
+  <h2 class='mat-h2'>No more problems</h2>
+</section>

@@ -1,0 +1,11 @@
+<mat-card class="topic" [routerLink]='["/topics/", topic.id]'>
+  <div>{{topic.title}}</div>
+  <div>
+  <a *ngIf="userIsAuthenticated && userId === topic.creator" 
+    [routerLink]='["/topics/edit", topic.id]'
+    mat-button color="accent">Edit Topic</a>
+  <a *ngIf="userIsAuthenticated && userId === topic.creator"
+    (click)="onDelete(topic.id)"
+    mat-button color="warn">Delete Topic</a>
+  </div>
+</mat-card>

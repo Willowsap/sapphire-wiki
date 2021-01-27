@@ -1,0 +1,33 @@
+<mat-spinner *ngIf="isLoading"></mat-spinner>
+<mat-accordion multi="true" *ngIf="courses.length > 0 && !isLoading">
+  <mat-expansion-panel *ngFor="let a of courses">
+    <mat-expansion-panel-header>
+      {{ a.title }}
+    </mat-expansion-panel-header>
+    <div class="problem-image">
+      <img [src]='a.imagePath' [alt]='a.title'>
+    </div>
+    <p>{{a.content}}</p>
+    <mat-action-row>
+      <a mat-button
+        [routerLink]='["/course", a.id]'
+        color="accent">Start Learning</a>
+      <a mat-button
+        *ngIf="user === a.creator"
+        [routerLink]='["/courses/edit", a.id]'
+        color="accent">EDIT</a>
+      <button mat-button
+        *ngIf="user === a.creator"
+        color="warn"
+        (click)="onDelete(a.id)">DELETE</button>
+    </mat-action-row>
+  </mat-expansion-panel>
+</mat-accordion>
+<mat-paginator 
+  [length]='totalCourses' 
+  [pageSize]='coursesPerPage' 
+  [pageSizeOptions]='pageSizeOptions'
+  (page)="onChangedPage($event)"
+  *ngIf="courses.length > 0">
+</mat-paginator>
+<p class="info-text mat-body-1" *ngIf="courses.length == 0 && !isLoading">No subjects yet</p>

@@ -1,0 +1,21 @@
+mat-form-field, textarea {
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: rgb(1,147,249);
+}
+
+mat-spinner {
+  margin: auto;
+}
+
+button {
+  margin-top: 0.5rem;
+  margin-right: 0.5rem;
+}
+
+#problemsSection {
+  margin-top: 2rem;
+}

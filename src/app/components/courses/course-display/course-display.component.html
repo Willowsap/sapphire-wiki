@@ -1,0 +1,23 @@
+<mat-spinner *ngIf='isLoading'></mat-spinner>
+<mat-card *ngIf='!isLoading'>
+  <div class="top">
+    <h1 class="mat-h1">{{course.title}}</h1>
+    <p class="mat-body1">
+      {{course.content}}
+    </p>
+  </div>
+  <ul id="topicList">
+    <li *ngFor="let topic of topics">
+      <app-topic-button
+        class="topic"
+        [onDelete]="onDelete"
+        [topic]="topic"
+        [userIsAuthenticated]="userIsAuthenticated"
+        [userId]="'none'"></app-topic-button>
+    </li>
+  </ul>
+  <a *ngIf="userIsAuthenticated && userId === course.creator" 
+    [routerLink]='["/topics/create", course.id]'
+    mat-button>Add Topic</a>
+  <a routerLink='/courses' mat-button>Return to Courses</a>
+</mat-card>

@@ -1,0 +1,28 @@
+<mat-card>
+  <mat-spinner *ngIf='isLoading'></mat-spinner>
+  <form [formGroup]='form' (submit)='onSaveSap()' *ngIf='!isLoading'>
+    <mat-form-field>
+      <input matInput type='text' formControlName='question' placeholder='Question Text'>
+    </mat-form-field>
+    <div class="inputWithButton">
+      <mat-form-field>
+        <input  matInput type="text" formControlName='answer' placeholder='Answer'>
+      </mat-form-field>
+      <button type='button' mat-stroked-button color='accent' (click)="onAddAnswer()">Add answer</button>
+    </div>
+    <div class='bottomSection'>
+      <div class='left'>
+        <h2 class='mat-h2' *ngIf="answers.length > 0">Answers:</h2>
+        <ul *ngIf="answers.length > 0">
+          <li *ngFor="let answer of answers">
+            {{answer}}
+          </li>
+        </ul>
+      </div>
+      <div class='right'>
+        <button mat-raised-button color='accent' type='submit'>Save Topic</button>
+        <button mat-raised-button color='accent' type='button' (click)="cancel()">Cancel</button>
+      </div>
+    </div>
+  </form>
+</mat-card>

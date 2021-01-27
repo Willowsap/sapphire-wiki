@@ -1,0 +1,25 @@
+mat-form-field, textarea {
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: rgb(1,147,249);
+}
+
+mat-spinner {
+  margin: auto;
+}
+
+input[type='file'] {
+  visibility: hidden;
+}
+
+.imagePreview {
+  height: 5rem;
+  margin: 1rem 0;
+}
+
+.imagePreview img {
+  height: 100%;
+}
